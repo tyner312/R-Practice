@@ -1,0 +1,88 @@
+version
+version
+2+2
+install.packages("rmarkdown")
+setwd("C:/Users/NCTU/Desktop/R")
+version
+getwd
+getwd()
+install.packages("tidyverse")
+knitr::opts_chunk$set(echo = TRUE)
+library("tidyverse")
+#加法
+2+2
+#減法
+7-3
+#乘法
+2*3*4
+#除法
+22/7
+#指數
+2^5
+#習題
+3^(1.573+2.938)+4-34^((-2)^(3.75-3/4))
+#自然指數函數(natural exponential function)
+exp(1)
+exp(2)
+exp(3)
+#自然對數(natural log)
+log(x = exp(1))
+#對數
+log(x = 32, base = 2)
+log(x = 243, base = 3)
+log2(x = 32)
+log10(x = 100)
+4860394768493465
+0.000000057282954
+4860394768493465
+0.00000057282954
+#加法
+2+2
+#減法
+7-3
+#乘法
+2*3*4
+#除法
+22/7
+#指數
+2^5
+#習題
+3^(1.573+2.938)+4-34^((-2)^(3.75-3/4))
+#自然指數函數(natural exponential function)
+exp(1)
+exp(2)
+exp(3)
+#自然對數(natural log)
+log(x = exp(1))
+#對數
+log(x = 32, base = 2)
+log(x = 243, base = 3)
+log2(x = 32)
+log10(x = 100)
+mental_rotation <- read.table("data/Tab3-1.dat",header = TRUE)
+names(mental_rotation)
+dim(mental_rotation)
+mental_rotation
+install.packages("aplpack")
+install.packages("aplpack")
+knitr::opts_chunk$set(echo = TRUE)
+stem(class_data$age, scale = 0.5)
+class_data <- read.table("data/2019class.csv",header = TRUE)
+names(class_data)
+dim(class_data)
+class_data
+seq(from = 0, to = 40, by = 10)
+hist(class_data$age, breaks = seq(from = 0, to = 500, by = 100), xlim = c(0, 500), main = "老師年齡猜測", xlab = "老師年齡", ylab = "次數", xaxt = "n", yaxt = "n")
+stem(class_data$age, scale = 0.5)
+class_data <- read.table("data/class_data.csv", header = TRUE)
+seq(from = 0, to = 40, by = 10)
+hist(class_data$age, breaks = seq(from = 0, to = 500, by = 100), xlim = c(0, 500), main = "老師年齡猜測", xlab = "老師年齡", ylab = "次數", xaxt = "n", yaxt = "n")
+stem(class_data$age, scale = 0.5)
+class_data <- read.table("data/class_data.csv", header = TRUE)
+seq(from = 0, to = 40, by = 10)
+hist(class_data$age, breaks = seq(from = 0, to = 500, by = 100), xlim = c(0, 500), main = "老師年齡猜測", xlab = "老師年齡", ylab = "次數", xaxt = "n", yaxt = "n")
+stem(class_data$age, scale = 0.5)
+seq(from = 0, to = 40, by = 10)
+hist(class_data$age, breaks = seq(from = 0, to = 500, by = 100), xlim = c(0, 500), main = "老師年齡猜測", xlab = "老師年齡", ylab = "次數", xaxt = "n", yaxt = "n")
+seq(from = 0, to = 500, by = 1)
+hist(class_data$age, breaks = seq(from = 0, to = 500, by = 1), xlim = c(0, 500), main = "老師年齡猜測", xlab = "老師年齡", ylab = "次數", xaxt = "n", yaxt = "n")

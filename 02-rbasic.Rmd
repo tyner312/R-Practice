@@ -1,0 +1,143 @@
+---
+title: "02rbasic"
+author: "Hi"
+date: "2019年2月26日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r chinese, include=FALSE}
+#設定區域性(locale) :中文語系
+Sys.setlocale(category = "LC_ALL",locale = "cht")
+```
+
+##載入套件
+
+```{r}
+library("tidyverse")
+```
+
+##算數
+
+優先順序 : 括號 > 指數 > 乘 > 除 > 加 > 減
+
+```{r arithmetic}
+#加法
+2+2
+
+#減法
+7-3
+
+#乘法
+2*3*4
+
+#除法
+22/7
+
+#指數
+2^5
+
+#習題
+3^(1.573+2.938)+4-34^((-2)^(3.75-3/4))
+
+#自然指數函數(natural exponential function)
+exp(1)
+exp(2)
+exp(3)
+
+#自然對數(natural log)
+log(x = exp(1))
+
+#對數
+log(x = 32, base = 2)
+log(x = 243, base = 3)
+log2(x = 32)
+log10(x = 100)
+
+```
+
+### E表示法(E-notation)
+
+```{r}
+4860394768493465
+0.00000057282954
+```
+
+### 其他
+
+```{r}
+#平方根(square root)
+sqrt(9)
+sqrt(10)
+9^(1/2)
+10^(0.5)
+
+#pi
+pi
+2*pi*6378
+
+#多指令
+
+```
+
+
+## 輸入分隔文字檔(delimited text file)
+```{r}
+mental_rotation <- read.table("data/Tab3-1.dat",header = TRUE)
+names(mental_rotation)
+dim(mental_rotation)
+mental_rotation
+```
+
+##畫直方圖
+```{r}
+seq(from = 0, to = 50, by = 10)
+
+
+hist(mental_rotation$RTsec, breaks = seq(from = 0, to = 5, by = 0.1), xlim = c(0, 5), main = "反應時間的直方圖", xlab = "反應時間(單位:秒)", ylab = "次數", xaxt = "n", yaxt = "n")
+axis(side = 1, at = seq(from = 0, to = 5, by = 1), pos = 0, las = 0)
+axis(side = 2, at = seq(from = 0, to = 50, by = 10), pos = 0, las = 0)
+
+
+png("images/Figure3.1.png", width = 800, units = "px")
+
+hist(mental_rotation$RTsec, breaks = seq(from = 0, to = 5, by = 0.1), xlim = c(0, 5), main = "反應時間的直方圖", xlab = "反應時間(單位:秒)", ylab = "次數", xaxt = "n", yaxt = "n")
+axis(side = 1, at = seq(from = 0, to = 9, by = 1), pos = 0, las = 0)
+axis(side = 2, at = seq(from = 0, to = 50, by = 10), pos = 0, las = 0)
+
+dev.off()
+```
+
+##畫莖葉圖
+
+scale的值代表為莖預設高度的幾倍
+
+```{r}
+stem(mental_rotation$RTsec, scale = 0.5)
+stem(mental_rotation$RTsec, scale = 1)
+stem(mental_rotation$RTsec, scale = 2)
+stem(mental_rotation$RTsec, scale = 3)
+```
+
+##背靠背莖葉圖
+
+```{r}
+total_points <- read.table("data/Fig3-4.dat", header = TRUE)
+names(total_points)
+dim(total_points)
+str(total_points)
+total_points
+
+rarely <- total_points$Points[total_points$Attend == 1]
+
+regularly <- total_points$Points[total_points$Attend ==2]
+
+library(aplpack)
+
+stem.leaf.backback(rarely,regularly)
+
+```
+

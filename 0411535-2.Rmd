@@ -1,0 +1,64 @@
+---
+title: '0411535'
+author: "Hi"
+date: "2019年2月26日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r chinese, include=FALSE}
+#設定區域性(locale) :中文語系
+Sys.setlocale(category = "LC_ALL",locale = "cht")
+```
+##1.
+
+```{r arithmetic}
+-5^2+2
+```
+
+##2.
+
+```{r}
+class_data <- read.table("data/2019class.csv",header = TRUE, sep = ",")
+names(class_data)
+dim(class_data)
+class_data
+```
+
+```{r}
+seq(from = 0, to = 500, by = 1)
+
+
+hist(class_data$age, breaks = seq(from = 0, to = 500, by = 1), xlim = c(0, 500), main = "老師年齡猜測", xlab = "老師年齡", ylab = "次數", xaxt = "n", yaxt = "n")
+axis(side = 1, at = seq(from = 0, to = 500, by = 1), pos = 0, las = 0)
+axis(side = 2, at = seq(from = 0, to = 40, by = 10), pos = 0, las = 0)
+
+```
+
+##3.
+
+```{r}
+stem(class_data$age, scale = 5)
+stem(class_data$age, scale = 10)
+
+```
+
+##4.
+
+```{r}
+total_points <- read.table("data/2019class.csv", header = TRUE, sep = ",")
+names(total_points)
+dim(total_points)
+str(total_points)
+total_points
+girl <- total_points$age[total_points$gender == 1]
+
+boy <- total_points$age[total_points$gender ==2]
+
+library(aplpack)
+
+stem.leaf.backback(girl,boy)
+```
